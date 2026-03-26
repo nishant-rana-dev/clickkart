@@ -1,12 +1,19 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
+import Login from './components/login/Login'
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <h2>Clickkart</h2>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
